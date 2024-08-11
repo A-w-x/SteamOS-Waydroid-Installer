@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Android Waydroid Toolbox
+Categories=Game
+Exec=waydroid-toolbox
+Hidden=false
+Icon=waydroid
+Keywords=android;waydroid
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

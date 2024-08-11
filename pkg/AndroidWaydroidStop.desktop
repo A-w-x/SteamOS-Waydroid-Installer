@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Android Waydroid Stop
+Type=Application
+Icon=waydroid
+Terminal=false
+Hidden=false
+Keywords=android;waydroid
+Categories=Game
+Exec=waydroid-container-stop

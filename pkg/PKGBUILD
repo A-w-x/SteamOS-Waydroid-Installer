@@ -1,0 +1,44 @@
+pkgname='android-waydroid-cage'
+pkgver=1.0
+pkgrel=1
+pkgdesc='All you need to run waydroid (thanks to ryanrudolf for his work)'
+url=''
+arch=('any')
+source=(
+    'waydroid-container-start'
+    'waydroid-container-stop'
+    'waydroid-fix-storage'
+    'android-waydroid-cage'
+    'waydroid-toolbox'
+    'AndroidWaydroidCage.desktop'
+    'AndroidWaydroidStop.desktop'
+    'WaydroidToolbox.desktop'
+    'audio.rc'
+    'nodataperm.sh'
+)
+sha256sums=(
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+    'SKIP'
+)
+depends=('cage' 'wlr-randr' 'waydroid')
+
+package() {
+    install -Dm755 "${srcdir}/waydroid-container-start" "${pkgdir}/usr/local/bin/waydroid-container-start"
+    install -Dm755 "${srcdir}/waydroid-container-stop" "${pkgdir}/usr/local/bin/waydroid-container-stop"
+    install -Dm755 "${srcdir}/android-waydroid-cage" "${pkgdir}/usr/local/bin/android-waydroid-cage"
+    install -Dm755 "${srcdir}/waydroid-fix-storage" "${pkgdir}/usr/local/bin/waydroid-fix-storage"
+    install -Dm755 "${srcdir}/waydroid-toolbox" "${pkgdir}/usr/local/bin/waydroid-toolbox"
+    install -Dm755 "${srcdir}/AndroidWaydroidCage.desktop" "${pkgdir}/usr/local/share/applications/AndroidWaydroidCage.desktop"
+    install -Dm755 "${srcdir}/AndroidWaydroidStop.desktop" "${pkgdir}/usr/local/share/applications/AndroidWaydroidStop.desktop"
+    install -Dm755 "${srcdir}/WaydroidToolbox.desktop" "${pkgdir}/usr/local/share/applications/WaydroidToolbox.desktop"
+    install -Dm755 "${srcdir}/audio.rc" "${pkgdir}/var/lib/waydroid/overlay/system/etc/init/audio.rc"
+    install -Dm755 "${srcdir}/nodataperm.sh" "${pkgdir}/var/lib/waydroid/overlay/system/etc/nodataperm.sh"
+}

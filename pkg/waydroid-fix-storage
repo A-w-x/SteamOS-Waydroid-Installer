@@ -1,0 +1,3 @@
+#!/bin/bash
+# fix for scoped storage permission issue
+waydroid shell sh /system/etc/nodataperm.sh
