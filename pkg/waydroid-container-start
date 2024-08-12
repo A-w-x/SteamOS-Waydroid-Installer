@@ -1,8 +1,8 @@
 #!/bin/bash
 sudo systemctl start waydroid-container
 
-if [[ ! -L /dev/anbox-binder ]] || ! readlink -q /dev/anbox-binder &>/dev/null; then
-	sleep 5
+if ! readlink -q /dev/anbox-binder &>/dev/null; then
+	sleep 2
 	rm /dev/anbox-binder &>/dev/null
 	ln -s /dev/binderfs/binder /dev/anbox-binder &>/dev/null
 	chmod o=rw /dev/anbox-binder
