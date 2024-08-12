@@ -1,16 +1,13 @@
 #!/bin/bash
 resolution=$(xrandr | grep '*' | awk '{print $1}')
 
-# Try to kill cage gracefully using SIGTERM
-timeout 5s killall -15 cage -w &> /dev/null
-if [ $? -eq 124 ]; then
-	# Timed out, process still active, let's force some more using SIGINT
-	timeout 5s killall -2 cage -w &> /dev/null
+if pstree|grep -i cage; then
+        timeout 5s killall -2 cage -w &> /dev/null
 
-	if [ $? -eq 124 ]; then
-		# Timed out again, this will shut it down for good using SIGKILL
-		timeout 5s killall -9 cage -w &> /dev/null
-	fi
+        if [ $? -eq 124 ]; then
+                # Timed out, this will shut it down for good using SIGKILL
+                timeout 5s killall -9 cage -w &> /dev/null
+        fi
 fi
 
 if waydroid status|grep -i running; then
