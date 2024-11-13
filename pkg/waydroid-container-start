@@ -1,9 +1,3 @@
 #!/bin/bash
+sudo modprobe binder-linux device=binder,hwbinder,vndbinder
 sudo systemctl start waydroid-container
-
-if ! readlink -q /dev/anbox-binder &>/dev/null; then
-	sleep 2
-	rm /dev/anbox-binder &>/dev/null
-	ln -s /dev/binderfs/binder /dev/anbox-binder &>/dev/null
-	chmod o=rw /dev/anbox-binder
-fi

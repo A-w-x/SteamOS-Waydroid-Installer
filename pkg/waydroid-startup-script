@@ -1,0 +1,9 @@
+#!/bin/bash
+sleep 10 # wait waydroid
+usbreset 045e:028e
+
+# fix for scoped storage permission issue
+waydroid shell sh /system/etc/nodataperm.sh
+
+# disable initial device setup via ADB
+waydroid shell pm disable com.google.android.setupwizard

@@ -1,5 +1,4 @@
 #!/system/bin/sh
-
 # no data permission hack to circumvent the Android 11 scoped storage permission
 # Thanks to PrimeOS
 
