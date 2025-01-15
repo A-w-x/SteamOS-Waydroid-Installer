@@ -28,7 +28,7 @@ sha256sums=(
     'SKIP'
     'SKIP'
 )
-depends=('cage' 'wlr-randr' 'waydroid' 'usbutils')
+depends=('cage' 'wlr-randr' 'waydroid' 'usbutils' 'zenity')
 
 package() {
     install -Dm755 "${srcdir}/waydroid-container-start" "${pkgdir}/usr/local/bin/waydroid-container-start"

@@ -16,7 +16,7 @@ $usrname ALL=(ALL) NOPASSWD: /usr/bin/systemctl start waydroid-container
 $usrname ALL=(ALL) NOPASSWD: /usr/bin/systemctl stop waydroid-container
 EOF
 
-if -f /var/lib/waydroid/images/system.img; then
+if [[ -f /var/lib/waydroid/images/system.img ]]; then
 	echo Waydroid is already installed.
 	exit 0
 fi
