@@ -36,7 +36,7 @@ else
 	exit 1
 fi
 
-if ! which firewall-cmd; then
+if which firewall-cmd &>/dev/null; then
 	# firewall config for waydroid0 interface to forward packets for internet to work
 	sudo firewall-cmd --zone=trusted --add-interface=waydroid0 &> /dev/null
 	sudo firewall-cmd --zone=trusted --add-port=53/udp &> /dev/null
